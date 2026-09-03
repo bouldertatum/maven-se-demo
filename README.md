@@ -59,7 +59,7 @@ Copy `.env.example` to `.env.local` only for local work. Never commit `.env.loca
 5. Skip App Settings for the self-contained sandbox build. The top-level capability files remain as the production-shaped external-API evolution.
 6. Explicitly reference each Knowledge source and Action from the appropriate Charter.
 7. Validate behavior in Simulator with **Show Reasoning** enabled.
-8. Import `maven/test-suites/roaming-evaluation.csv` and run the suite.
+8. Create the three-case `Trusted Roaming Acceptance` suite from the runbook and run it. Keep `maven/test-suites/roaming-evaluation.csv` as the extended regression set.
 
 See [Demo Runbook](docs/demo-runbook.md) for the detailed build and presentation path.
 
@@ -88,6 +88,7 @@ See [Demo Runbook](docs/demo-runbook.md) for the detailed build and presentation
 - [x] Verify the five-document Knowledge base
 - [x] Verify Charter, Knowledge, and Action routing in Simulator
 - [x] Create the in-product `Trusted Roaming Acceptance` test suite
+- [x] Pass the final three-case Maven acceptance baseline at `100%`
 - [ ] Capture redacted proof screenshots
 - [ ] Build the final presentation deck
 - [ ] Rehearse and time the 25–30 minute presentation
