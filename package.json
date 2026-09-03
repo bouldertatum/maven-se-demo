@@ -1,0 +1,19 @@
+{
+  "name": "maven-se-demo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Synthetic wireless-support demo for a Maven AGI Solutions Engineering interview",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "node --watch mock-api/server.mjs",
+    "start": "node mock-api/server.mjs",
+    "test": "node --test mock-api/test/*.test.mjs",
+    "check:secrets": "node scripts/check-secrets.mjs",
+    "check": "npm test && npm run check:secrets"
+  },
+  "license": "MIT"
+}
+
