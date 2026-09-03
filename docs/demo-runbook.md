@@ -1,6 +1,10 @@
 # Demo build and presentation runbook
 
-## 1. Prepare the synthetic API
+## 1. Choose the execution path
+
+The interview sandbox uses the paste-ready files in `maven/capabilities/sandbox/`. They are self-contained and require no App Settings, secrets, network tunnel, or external hosting.
+
+The top-level files in `maven/capabilities/` and the local API remain the production-shaped option. To exercise that path:
 
 1. Run `npm test`.
 2. Start the service with `npm run dev`.
@@ -23,15 +27,16 @@ Create or upload each file under `maven/knowledge/` as a separate source. Keep t
 
 ## 4. Add Actions
 
-For each file under `maven/capabilities/`:
+For each file under `maven/capabilities/sandbox/`:
 
 1. Create an Action capability with the matching name and description.
 2. Select the built-in code editor and paste the single TypeScript file.
-3. Add `API_BASE_URL` and `API_TOKEN` in App Settings.
+3. Do not add App Settings for the sandbox path.
 4. Run the Action with the example input in its header comment.
 5. Save only after the response shape and error path are verified.
-6. Set LLM Inclusion to **When Relevant**.
-7. Reference the Action from the appropriate Charter.
+6. Keep **User Input Required** enabled for `Refresh network registration`.
+7. Make `idempotencyKey` optional; the Action supplies a deterministic demo fallback.
+8. Reference the Action from the appropriate Charter.
 
 ## 5. Validate in Simulator
 
@@ -46,7 +51,7 @@ Use customer `CUST-DEMO-001`. Turn on **Show Reasoning** and verify:
 
 ## 6. Run evaluations
 
-Import `maven/test-suites/roaming-evaluation.csv`. Run the full suite after every Charter, Knowledge, or Action change. Record the date, pass rate, important failures, and remediation in `docs/decisions.md`.
+Use the in-product `Trusted Roaming Acceptance` suite for the three live critical cases: grounded diagnosis, high-value credit guardrail, and no-confirmation/no-mutation. Keep `maven/test-suites/roaming-evaluation.csv` as the six-case extended regression set. Run the suite after every Charter, Knowledge, or Action change. Record the date, pass rate, important failures, and remediation in `docs/decisions.md`.
 
 ## 7. Live presentation path
 
@@ -70,4 +75,3 @@ Before the panel, capture redacted screenshots or a short recording of:
 - the Test Suite summary.
 
 If the live environment fails, narrate the same sequence using these artifacts and explain the diagnosed boundary rather than hiding it.
-

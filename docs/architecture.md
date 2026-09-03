@@ -29,7 +29,7 @@ flowchart LR
 
 1. **Global Service Rules** — foundational, no Segment. Establishes identity, evidence, privacy, and safe-action rules.
 2. **International Roaming Support** — selected when `support_intent = international_roaming`. Provides diagnostic decision logic and references roaming Knowledge and operational Actions.
-3. **Financial Controls** — selected when the customer asks for a credit. Amounts at or below `$50` may follow the normal approval path; larger amounts expose escalation only.
+3. **Financial Controls** — selected when `requested_credit_amount > 50` beneath the roaming Charter. Larger amounts expose escalation only.
 
 Maven does not automatically make all Knowledge and Actions available to every conversation. Each capability must be referenced by the active Charter path. This design treats that constraint as a security boundary.
 
@@ -49,7 +49,7 @@ Five small Markdown sources separate stable concepts:
 |---|---|---|
 | `getCustomerContext` | Reads plan and authenticated customer facts | Requires customer ID from trusted session context |
 | `getRoamingStatus` | Reads enrollment, usage, and network state | No mutation |
-| `refreshNetworkRegistration` | Performs reversible network refresh | Requires explicit customer confirmation; idempotent request key |
+| `refreshNetworkRegistration` | Performs reversible network refresh | Requires Maven's native user confirmation; uses a supplied or deterministic idempotency key |
 | `escalateToHuman` | Creates a structured case | Used for high-value credits and unresolved failures |
 
 ### Evidence
@@ -66,5 +66,4 @@ During the demo, Maven Simulator's **Show Reasoning** view should prove which us
 
 ## Production evolution
 
-The prototype uses Maven Custom Actions plus a local synthetic API because that is the fastest path to a credible interview demo. A production deployment would add enterprise identity, audited service accounts, rate limits, observability, formal policy ownership, and a Maven App when reusable packaging or more complex lifecycle management is justified.
-
+The interview sandbox uses self-contained Maven Actions to remove hosting and credential risk during the live demo. The repository also preserves external-API adapters and a local synthetic API as the production-shaped evolution. A production deployment would add enterprise identity, audited service accounts, rate limits, observability, formal policy ownership, and a Maven App when reusable packaging or more complex lifecycle management is justified.

@@ -1,6 +1,6 @@
 # Financial Controls
 
-**Segment:** A customer requests a bill adjustment or credit.
+**Segment:** `support_intent = international_roaming` (inherited) and `requested_credit_amount > 50`.
 
 ## Manual
 
@@ -20,4 +20,3 @@ The automatic adjustment threshold in this prototype is `$50`. This is synthetic
 ## Capabilities
 
 - `escalateToHuman`
-

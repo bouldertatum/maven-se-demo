@@ -23,7 +23,7 @@ This sequence demonstrates Maven's core value proposition: **search, reason, act
 docs/                    Discovery, architecture, runbook, and success criteria
 maven/charters/          Source-of-truth Charter instructions
 maven/knowledge/         Compact synthetic support references
-maven/capabilities/      Maven Custom Action source files
+maven/capabilities/      External-API adapters plus paste-ready sandbox Actions
 maven/test-suites/       Evaluation cases ready for CSV import
 mock-api/                Zero-dependency synthetic telecom API and tests
 debug-view/              Companion observability-view specification
@@ -55,8 +55,8 @@ Copy `.env.example` to `.env.local` only for local work. Never commit `.env.loca
 1. Create a new Maven agent and a foundational Charter.
 2. Add the roaming and financial-control Charters from `maven/charters/`.
 3. Add the Markdown sources from `maven/knowledge/`.
-4. Create four Custom Actions using the files in `maven/capabilities/`.
-5. Store `API_BASE_URL` and `API_TOKEN` in Maven App Settings.
+4. For the interview sandbox, create four Actions using `maven/capabilities/sandbox/`.
+5. Skip App Settings for the self-contained sandbox build. The top-level capability files remain as the production-shaped external-API evolution.
 6. Explicitly reference each Knowledge source and Action from the appropriate Charter.
 7. Validate behavior in Simulator with **Show Reasoning** enabled.
 8. Import `maven/test-suites/roaming-evaluation.csv` and run the suite.
@@ -84,8 +84,10 @@ See [Demo Runbook](docs/demo-runbook.md) for the detailed build and presentation
 - [x] Charter, Knowledge, and Action source files
 - [x] Initial six-case evaluation suite
 - [x] Automated tests and secret checks
-- [ ] Build the agent in the Maven sandbox
+- [x] Build the agent in the Maven sandbox
+- [x] Verify the five-document Knowledge base
+- [x] Verify Charter, Knowledge, and Action routing in Simulator
+- [x] Create the in-product `Trusted Roaming Acceptance` test suite
 - [ ] Capture redacted proof screenshots
 - [ ] Build the final presentation deck
 - [ ] Rehearse and time the 25–30 minute presentation
-
