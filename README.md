@@ -89,6 +89,7 @@ See [Demo Runbook](docs/demo-runbook.md) for the detailed build and presentation
 - [x] Verify Charter, Knowledge, and Action routing in Simulator
 - [x] Create the in-product `Trusted Roaming Acceptance` test suite
 - [x] Pass the final three-case Maven acceptance baseline at `100%`
-- [ ] Capture redacted proof screenshots
-- [ ] Build the final presentation deck
+- [x] Capture synthetic-safe proof screenshots
+- [x] Build and validate the native Google Slides presentation
 - [ ] Rehearse and time the 25–30 minute presentation
+- [ ] Replace the career-impact result card with one verified metric
