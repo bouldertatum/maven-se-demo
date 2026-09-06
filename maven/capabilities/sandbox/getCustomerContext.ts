@@ -26,7 +26,7 @@ export default async function (input: {
       destination: "France",
       plan: {
         name: "Unlimited Premium (Synthetic)",
-        internationalDayPassEligible: true,
+        internationalRoamingEnabled: true,
       },
     },
   }

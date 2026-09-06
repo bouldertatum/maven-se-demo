@@ -5,7 +5,7 @@
  *   "reason": "credit_approval",
  *   "requestedCreditAmount": 327,
  *   "summary": "Traveler in France; registration refreshed; $327 charge disputed.",
- *   "evidence": ["Day Pass enabled", "Stale registration found", "Refresh OP-DEMO-001 succeeded"]
+ *   "evidence": ["International roaming enabled", "Stale registration found", "Refresh OP-DEMO-001 succeeded"]
  * }
  * Required App Settings: API_BASE_URL, API_TOKEN
  */
@@ -51,4 +51,3 @@ export default async function escalateToHuman({ props, settings }: Args) {
 
   return { ok: true, escalation: body };
 }
-

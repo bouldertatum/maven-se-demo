@@ -8,14 +8,18 @@ const customer = {
   authenticated: true,
   plan: {
     name: "Unlimited Premium (Synthetic)",
-    internationalDayPassEligible: true,
+    internationalRoamingEnabled: true,
   },
   destination: "France",
 };
 
 const roaming = {
   customerId: "CUST-DEMO-001",
-  internationalDayPass: { enrolled: true, status: "active" },
+  internationalRoaming: {
+    enabled: true,
+    authorizationStatus: "enabled",
+    meaning: "The line is allowed to attempt international roaming; this does not validate pricing or charges.",
+  },
   visitedNetwork: "FR-DEMO-MOBILE",
   registrationState: "stale",
   usage: {
@@ -146,4 +150,3 @@ if (launchedDirectly) {
     console.log(`Synthetic telecom API listening on http://127.0.0.1:${port}`);
   });
 }
-

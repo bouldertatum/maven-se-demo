@@ -35,7 +35,7 @@ test("returns synthetic customer and roaming context", async () => {
   const contextResponse = await fetch(`${baseUrl}/customers/CUST-DEMO-001/context`, { headers });
   const roamingResponse = await fetch(`${baseUrl}/customers/CUST-DEMO-001/roaming`, { headers });
   assert.equal(contextResponse.status, 200);
-  assert.equal((await contextResponse.json()).plan.internationalDayPassEligible, true);
+  assert.equal((await contextResponse.json()).plan.internationalRoamingEnabled, true);
   assert.equal(roamingResponse.status, 200);
   assert.equal((await roamingResponse.json()).registrationState, "stale");
 });
@@ -84,7 +84,7 @@ test("creates a structured human escalation", async () => {
       reason: "credit_approval",
       requestedCreditAmount: 327,
       summary: "Synthetic disputed roaming charge",
-      evidence: ["Day Pass enabled", "Usage found"],
+      evidence: ["International roaming enabled", "Usage found"],
     }),
   });
   const body = await response.json();
@@ -93,4 +93,3 @@ test("creates a structured human escalation", async () => {
   assert.equal(body.status, "queued_for_human_review");
   assert.equal(body.evidenceCount, 2);
 });
-

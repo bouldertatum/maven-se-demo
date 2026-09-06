@@ -9,7 +9,7 @@ An independent interview prototype showing how a Maven AGI agent can resolve a c
 A customer traveling in France reports unreliable service and an unexpected roaming charge. The agent:
 
 1. identifies the authenticated customer and current plan;
-2. checks roaming enrollment and network registration;
+2. checks international-roaming authorization and network registration;
 3. explains the relevant policy in plain language;
 4. safely refreshes network registration;
 5. refuses to auto-issue a requested `$327` credit because it exceeds a synthetic `$50` approval threshold; and
@@ -75,7 +75,6 @@ See [Demo Runbook](docs/demo-runbook.md) for the detailed build and presentation
 
 - [Maven product documentation](https://docs.mavenagi.com/)
 - [Maven developer documentation](https://developers.mavenagi.com/)
-- [AT&T International Day Pass support](https://www.att.com/support/article/wireless/KM1175103/)
 
 ## Status
 

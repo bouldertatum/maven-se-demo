@@ -38,7 +38,7 @@ Maven does not automatically make all Knowledge and Actions available to every c
 Five small Markdown sources separate stable concepts:
 
 - international-roaming troubleshooting;
-- synthetic International Day Pass behavior;
+- synthetic international-roaming authorization behavior;
 - network-registration recovery;
 - synthetic billing-credit limits; and
 - escalation requirements.

@@ -17,7 +17,12 @@ export default async function (input: {
     ok: true,
     roaming: {
       customerId,
-      internationalDayPass: { enrolled: true, status: "active" },
+      internationalRoaming: {
+        enabled: true,
+        authorizationStatus: "enabled",
+        meaning:
+          "The line is allowed to attempt international roaming; this does not validate pricing or charges.",
+      },
       visitedNetwork: "FR-DEMO-MOBILE",
       registrationState: "stale",
       usage: {
